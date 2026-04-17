@@ -19,7 +19,7 @@ const NavBar = () => {
         )}
 
         {!token && <Nav.Link href="#register">🔐 Register</Nav.Link>}
-        <Nav.Link href="#Total">🛒 Total: {total}$</Nav.Link>
+        <Nav.Link href="#Total">🛒 Total: ${total}</Nav.Link>
       </Nav>
     </Navbar>
   );

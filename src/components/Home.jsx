@@ -21,7 +21,7 @@ const pizzas = [
     name: "Pepperoni",
     price: "$6.950",
     ingredients: ["mozzarella", "pepperoni", "orégano"],
-    img: "https://cdn.papajohns.cl/thumbnails/pizzas/superpepperoni_1691158011_large.jpg"
+    img: "https://cdn.blog.paulinacocina.net/wp-content/uploads/2024/10/receta-pizza-de-pepperoni-facil-1729847335.jpg"
   }
 ];
 

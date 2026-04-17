@@ -9,7 +9,8 @@ export default function CardPizza({ img, name, price, ingredients }) {
       boxShadow: "0 18px 40px rgba(15, 23, 42, 0.08)",
       margin: "16px",
       display: "flex",
-      flexDirection: "column"
+      flexDirection: "column",
+      minHeight: "600px"
     }}>
       <img
         src={img}
@@ -17,9 +18,9 @@ export default function CardPizza({ img, name, price, ingredients }) {
         style={{ width: "100%", height: "240px", objectFit: "cover", display: "block" }}
       />
 
-      <div style={{ padding: "22px 24px 18px" }}>
+      <div style={{ padding: "22px 24px 18px", display: "flex", flexDirection: "column", flex: 1 }}>
         <h3 style={{ margin: 0, fontSize: "22px", fontWeight: 700, color: "#111" }}>{name}</h3>
-        <div style={{ marginTop: "16px", padding: "16px 18px", backgroundColor: "#fafafa", borderRadius: "16px" }}>
+        <div style={{ marginTop: "16px", padding: "16px 18px", backgroundColor: "#fafafa", borderRadius: "16px", flex: 1 }}>
           <p style={{ margin: 0, fontSize: "13px", fontWeight: 700, color: "#555", letterSpacing: "0.4px" }}>
             Ingredientes:
           </p>
