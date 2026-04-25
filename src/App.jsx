@@ -2,12 +2,18 @@ import './App.css'
 import NavBar from './components/NavBar'
 import Home from './components/Home'
 import Footer from './components/Footer'
-
+import Description from './components/Description'
+import { useState } from 'react'
+import LoginForm from './components/LoginForm'
+import RegisterForm from './components/RegisterForm'
 function App() {
   return (
     <>
       <NavBar />
-      <Home />
+      <RegisterForm />
+      <LoginForm />
+      {/* <Home /> */}
+      {/* <Description text="Este es un ejemplo de descripción." /> */}
       <Footer />
     </>
   )
