@@ -8,30 +8,24 @@ const RegisterForm = () => {
     const handleSubmit = (e) => {
     e.preventDefault();
 
-    // 1. JERARQUÍA SUPERIOR: ¿Los campos están vacíos?
-    // Ponemos esto arriba de todo. Si se cumple, el código se corta aquí.
     if (email === '' || password === '' || (confirmPassword !== undefined && confirmPassword === '')) {
         alert("Please fill in all fields.");
         return;
     }
 
-    // 2. JERARQUÍA MEDIA: Ya sabemos que NO están vacíos, ahora vemos el largo
     if (password.length < 6) {
         alert("Password must be at least 6 characters long.");
         return;
     }
 
-    // 3. JERARQUÍA FINAL: Solo para el Registro (coincidencia)
     if (confirmPassword !== undefined && password !== confirmPassword) {
         alert("Passwords do not match.");
         return;
     }
 
-    // Si el código "sobrevive" a los 3 filtros anteriores:
     alert("¡Account created successfully!");
     console.log("Formulario enviado correctamente");
     
-    // Limpiar campos
     setEmail('');
     setPassword('');
     if (setConfirmPassword) setConfirmPassword('');
@@ -49,7 +43,7 @@ const RegisterForm = () => {
                     name="email" 
                     placeholder="example@gmail.com" 
                     value={email} 
-                    onChange={(e) => setEmail(e.target.value)} // Corregido: 'e' en lugar de 'event'
+                    onChange={(e) => setEmail(e.target.value)}
                 />
             </div>
             <div>
@@ -81,4 +75,3 @@ const RegisterForm = () => {
 
 export default RegisterForm;
 
-/* VE EL VIDEO DE LA CLASE PASADA EN EL MINUTO 1:10:55!!!  FALTA FORM DE REGISTER*/

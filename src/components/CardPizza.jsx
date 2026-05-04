@@ -1,67 +1,45 @@
 // src/components/CardPizza.jsx
-export default function CardPizza({ img, name, price, ingredients }) {
+export default function CardPizza({ img, name, price, desc, ingredients }) {
   return (
     <div style={{
-      width: "320px",
+      width: "100%",           
+      maxWidth: "380px",       
       borderRadius: "24px",
-      overflow: "hidden",
       backgroundColor: "#fff",
-      boxShadow: "0 18px 40px rgba(15, 23, 42, 0.08)",
-      margin: "16px",
+      boxShadow: "0 10px 25px rgba(0,0,0,0.05)",
       display: "flex",
       flexDirection: "column",
-      minHeight: "600px"
+      height: "700px",         
+      overflow: "hidden"
     }}>
-      <img
-        src={img}
-        alt={name}
-        style={{ width: "100%", height: "240px", objectFit: "cover", display: "block" }}
-      />
+      <div style={{ padding: "24px", display: "flex", flexDirection: "column", flex: 1 }}>
+        
+        <h3 style={{ margin: "0 0 16px 0", fontSize: "22px", fontWeight: "bold", textTransform: "capitalize" }}>
+          {name}
+        </h3>
 
-      <div style={{ padding: "22px 24px 18px", display: "flex", flexDirection: "column", flex: 1 }}>
-        <h3 style={{ margin: 0, fontSize: "22px", fontWeight: 700, color: "#111" }}>{name}</h3>
-        <div style={{ marginTop: "16px", padding: "16px 18px", backgroundColor: "#fafafa", borderRadius: "16px", flex: 1 }}>
-          <p style={{ margin: 0, fontSize: "13px", fontWeight: 700, color: "#555", letterSpacing: "0.4px" }}>
-            Ingredientes:
-          </p>
-          <ul style={{ listStyle: "none", padding: 0, margin: "12px 0 0" }}>
-            {ingredients.map((ing, index) => (
-              <li key={index} style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px", fontSize: "13px", color: "#555" }}>
-                <span style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#FF9E1B", display: "inline-block" }} />
-                {ing}
-              </li>
-            ))}
+        <img src={img} alt={name} style={{ width: "calc(100% + 48px)", marginLeft: "-24px", height: "200px", objectFit: "cover" }} />
+
+        <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+          
+          <div style={{ height: "100px", overflow: "hidden", marginTop: "20px" }}>
+            <p style={{ fontSize: "14px", color: "#666", margin: 0 }}>{desc}</p>
+          </div>
+
+          <p style={{ fontWeight: "bold", margin: "15px 0 10px" }}>Ingredientes:</p>
+          
+          <ul style={{ flex: 1, margin: 0, paddingLeft: "20px", fontSize: "14px", color: "#444" }}>
+            {ingredients.map((ing, i) => <li key={i}>{ing}</li>)}
           </ul>
         </div>
 
-        <div style={{ marginTop: "20px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <div>
-            <p style={{ margin: 0, fontSize: "13px", color: "#6b7280" }}>Precio:</p>
-            <p style={{ margin: "4px 0 0", fontSize: "20px", fontWeight: 700, color: "#111" }}>{price}</p>
-          </div>
-          <div style={{ display: "flex", gap: "10px" }}>
-            <button style={{
-              padding: "10px 16px",
-              border: "1px solid #d1d5db",
-              borderRadius: "12px",
-              backgroundColor: "#fff",
-              color: "#111",
-              fontWeight: 600,
-              cursor: "pointer"
-            }}>
-              Ver Más
-            </button>
-            <button style={{
-              padding: "10px 16px",
-              border: "none",
-              borderRadius: "12px",
-              backgroundColor: "#111",
-              color: "#fff",
-              fontWeight: 600,
-              cursor: "pointer"
-            }}>
-              Añadir
-            </button>
+        <div style={{ borderTop: "1px solid #eee", paddingTop: "20px", marginTop: "10px" }}>
+          <p style={{ textAlign: "center", fontSize: "20px", fontWeight: "bold", marginBottom: "15px" }}>
+            Precio: ${price.toLocaleString()}
+          </p>
+          <div style={{ display: "flex", justifyContent: "space-between", gap: "10px" }}>
+            <button style={{ flex: 1, padding: "10px", borderRadius: "10px", border: "1px solid #ccc", backgroundColor: "#fff" }}>Ver Más</button>
+            <button style={{ flex: 1, padding: "10px", borderRadius: "10px", backgroundColor: "#000", color: "#fff" }}>Añadir 🛒</button>
           </div>
         </div>
       </div>
